@@ -5,28 +5,35 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
-            <file>$PROJ_DIR$\Debug\Exe\test.hex</file>
-            <file>$PROJ_DIR$\Debug\Obj\test.pbd</file>
             <file>$PROJ_DIR$\Debug\Exe\test.out</file>
             <file>$PROJ_DIR$\Debug\Obj\main.o</file>
             <file>$PROJ_DIR$\source\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\test.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
+            <file>$PROJ_DIR$\Debug\Exe\test.hex</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\DOC_STM32\C&amp;C++-20240909T035219Z-001\C&amp;C++\embedded_C99\Microcontroler\STM32F10x\drive\0_include\gpio.h</file>
+            <file>$PROJ_DIR$\..\..\Driver\include\gpio.h</file>
+            <file>$PROJ_DIR$\..\..\Driver\source\gpio.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\DOC_STM32\C&amp;C++-20240909T035219Z-001\C&amp;C++\embedded_C99\Microcontroler\STM32F10x\drive\src\gpio.c</file>
+            <file>$PROJ_DIR$\..\..\Driver\include\bitband.h</file>
+            <file>$PROJ_DIR$\..\..\Driver\include\rcc.h</file>
+            <file>$PROJ_DIR$\..\..\Driver\source\rcc.c</file>
         </outputs>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\test.out</name>
-            <outputs>
-                <tool>
-                    <name>OBJCOPY</name>
-                    <file> 1</file>
-                </tool>
-            </outputs>
-        </file>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 3</file>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\test.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 5</file>
                 </tool>
             </outputs>
         </file>
@@ -35,11 +42,11 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 4</file>
+                    <file> 1</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 0</file>
+                    <file> 4</file>
                 </tool>
             </outputs>
         </file>

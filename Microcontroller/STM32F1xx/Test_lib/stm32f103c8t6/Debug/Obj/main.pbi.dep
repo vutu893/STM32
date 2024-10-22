@@ -1,2 +1,4 @@
 main.pbi: \
-  E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\source\main.c
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\source\main.c \
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Driver\include\gpio.h \
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\0_Common\include\define.h
