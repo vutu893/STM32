@@ -1,0 +1,4 @@
+gpio.pbi: \
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\0_Common\include\define.h \
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Driver\include\gpio.h \
+  E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Driver\source\gpio.c

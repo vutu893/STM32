@@ -180,7 +180,15 @@ typedef enum
   GPIO_MODE_AF_OUTPUT_PUSHPULL_50MHz    = (2 << 2) | 3,
   GPIO_MODE_AF_OUTPUT_OPEN_50MHz        = (3 << 2) | 3,  
 } GPIO_MODE;
+
+
 void GPIO_Mode(volatile GPIO_TypeDef* GPIO, unsigned int PIN, GPIO_MODE Mode);
+void GPIO_Mode_2(volatile GPIO_TypeDef* GPIO, unsigned int PIN, GPIO_MODE Mode);
+unsigned char GPIO_Read(volatile GPIO_TypeDef* GPIO, unsigned int PIN);
+void GPIO_Write(volatile GPIO_TypeDef* GPIO, unsigned int PIN, unsigned char State);
+void GPIO_Write_ODR(volatile GPIO_TypeDef* GPIO, unsigned int PIN, unsigned char State);
+void GPIO_Toggle(volatile GPIO_TypeDef* GPIO, unsigned int PIN);
+
 /* DESCRIPTION FUNCTION OF EACH REGISTER IN REGISTER OF GPIO (STM32F10XX)*/
 /* 
     GPIOx_CRL/ GPIOx_CRH use to set up mode for GPIO: input/output mode as CNFx[1: 0], MODEx[1:0} use to chose speed for output mode
@@ -189,5 +197,8 @@ void GPIO_Mode(volatile GPIO_TypeDef* GPIO, unsigned int PIN, GPIO_MODE Mode);
     GPIOx_BSRR(port bit set /reset register): 
     GPIOx_ BRR(port bit reset register)
     GPIOx_LCKR( port configuration lock register).
+    Each pin have 4 bit to config: [0:1]: config output/input
+                                   [3-4]: config speed for mode input/output
+                            To caculate value for one mode use: speed | (mode << 2)
 */
 #endif

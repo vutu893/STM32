@@ -1741,4 +1741,15 @@ struct\
 #define xSFRxB(name,address,feature,index_start,index_end,size_bit) __no_init __root __xdata volatile xBITS_UNION(name,unsigned char feature,b,index_start,index_end,size_bit) __at(address)
 #define TOGGLE(reg,bit_index)           TOGGLE_MASK(reg##_ADDRESS,bit_index)
 
+//stdint.h
+/*
+  uint32_t :unsigned int
+  int32_t  :int / signed int
+  uint16_t :unsigned short
+  int16_t  :signed short
+  uint8_t  :unsigned char
+  int8_t   :signed char
+  uintptr_t: unsigned long
+
+*/
 #endif

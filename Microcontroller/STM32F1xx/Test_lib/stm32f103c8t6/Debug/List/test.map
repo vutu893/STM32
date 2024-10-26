@@ -1,0 +1,177 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  26/Oct/2024  22:27:35
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Exe\test.out
+#    Map file     =
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\List\test.map
+#    Command line =
+#        -f C:\Users\vutu0\AppData\Local\Temp\EW43BC.tmp
+#        (E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Obj\gpio.o
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Obj\main.o
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Obj\myRCC.o
+#        --no_out_extension -o
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Exe\test.out
+#        --map
+#        E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\List\test.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\ST\stm32f103x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address   Size  Object
+  -------   ----         -------   ----  ------
+"A0":                              0x40
+  .intvec   ro code   0x800'0000   0x40  vector_table_M.o [3]
+                    - 0x800'0040   0x40
+
+"P1":                             0x160
+  .text     ro code   0x800'0040  0x10c  gpio.o [1]
+  .text     ro code   0x800'014c   0x1e  cmain.o [3]
+  .text     ro code   0x800'016a    0x4  low_level_init.o [2]
+  .text     ro code   0x800'016e    0x4  exit.o [2]
+  .text     ro code   0x800'0172    0x2  vector_table_M.o [3]
+  .text     ro code   0x800'0174    0xa  cexit.o [3]
+  .text     ro code   0x800'0180   0x14  exit.o [4]
+  .text     ro code   0x800'0194    0xc  cstartup_M.o [3]
+                    - 0x800'01a0  0x160
+
+"P2":                             0x800
+  CSTACK             0x2000'0000  0x800  <Block>
+    CSTACK  uninit   0x2000'0000  0x800  <Block tail>
+                   - 0x2000'0800  0x800
+
+Absolute sections, part 1 of 2:    0x1c
+  .noinit   uninit   0x4001'1000   0x1c  gpio.o [1]
+                   - 0x4001'101c   0x1c
+
+Absolute sections, part 2 of 2:    0x28
+  .noinit   uninit   0x4002'1000   0x28  gpio.o [1]
+                   - 0x4002'1028   0x28
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'01a0   0x800'ffff  0xfe60
+  0x2000'0800  0x2000'4fff  0x4800
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  rw data  rw data
+                                         (abs)
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Obj: [1]
+    gpio.o                268                68
+    -------------------------------------------
+    Total:                268                68
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    vector_table_M.o       66
+    -------------------------------------------
+    Total:                118
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2
+    Linker created               2'048
+-----------------------------------------------
+    Grand Total:          416    2'048       68
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                  0x800'014d        Code  Gb  cmain.o [3]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'0800         --   Gb  - Linker created -
+GPIOC                 0x4001'1000  0x1c  Data  Gb  gpio.o [1]
+GPIO_Mode              0x800'0041  0x6e  Code  Gb  gpio.o [1]
+GPIO_Toggle            0x800'00af  0x10  Code  Gb  gpio.o [1]
+RCC                   0x4002'1000  0x28  Data  Gb  gpio.o [1]
+RCC_Init               0x800'0101  0x4c  Code  Gb  gpio.o [1]
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+__cmain                0x800'014d        Code  Gb  cmain.o [3]
+__exit                 0x800'0181  0x14  Code  Gb  exit.o [4]
+__iar_program_start    0x800'0195        Code  Gb  cstartup_M.o [3]
+__low_level_init       0x800'016b   0x4  Code  Gb  low_level_init.o [2]
+__vector_table         0x800'0000        Data  Gb  vector_table_M.o [3]
+_call_main             0x800'0159        Code  Gb  cmain.o [3]
+_exit                  0x800'0175        Code  Gb  cexit.o [3]
+_main                  0x800'0167        Code  Gb  cmain.o [3]
+exit                   0x800'016f   0x4  Code  Gb  exit.o [2]
+main                   0x800'00bf  0x36  Code  Gb  gpio.o [1]
+
+
+[1] = E:\Embedded\C&C++\Embedded_C99\Microcontroller\STM32F1xx\Test_lib\stm32f103c8t6\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    416 bytes of readonly  code memory
+  2'048 bytes of readwrite data memory (+ 68 absolute)
+
+Errors: none
+Warnings: none

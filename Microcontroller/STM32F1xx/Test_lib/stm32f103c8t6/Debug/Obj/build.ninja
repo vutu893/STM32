@@ -21,7 +21,9 @@ rule browsedata
 
 #Build steps
 build main.pbi : index main.xcl
-build test.pbd : link main.pbi
+build gpio.pbi : index gpio.xcl
+build myRCC.pbi : index myRCC.xcl
+build test.pbd : link main.pbi gpio.pbi myRCC.pbi
 build test.pbw : browsedata test.pbd
 
 

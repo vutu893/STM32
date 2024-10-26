@@ -2377,5 +2377,23 @@
     </group>
     <group>
         <name>Driver</name>
+        <group>
+            <name>include</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\Driver\include\gpio.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\Driver\include\myRCC.h</name>
+            </file>
+        </group>
+        <group>
+            <name>source</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\Driver\source\gpio.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\Driver\source\myRCC.c</name>
+            </file>
+        </group>
     </group>
 </project>
