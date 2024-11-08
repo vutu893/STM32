@@ -1,5 +1,5 @@
 #include <cortex_m3.h>
-
+#include <stm32f103c8t6.h>
 /*-----------------------------Funtion for System Tick Timer----------------------------*/
 void SysTick_Config(uint32_t reload)
 {

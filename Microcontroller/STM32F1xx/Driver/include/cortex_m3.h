@@ -12,13 +12,13 @@
 /*-----------------------------------------Define register of system tick timer(STK)-------------------------------------------------------*/
 typedef struct
 {
-  uint32_t STK_CTRL; // SysTick control and status
-  uint32_t STK_LOAD; // SysTick reload 
-  uint32_t STK_VAL; // SysTick current value register
-  uint32_t STK_CALIB;// SysTick calibration value register
+  volatile uint32_t STK_CTRL; // SysTick control and status
+  volatile uint32_t STK_LOAD; // SysTick reload 
+  volatile uint32_t STK_VAL; // SysTick current value register
+  volatile uint32_t STK_CALIB;// SysTick calibration value register
 } SYSTICK_TypeDef;
 
-__root __no_init volatile SYSTICK_TypeDef SYSTICK @ (0xE000E010U);
+
 
 #define STK_CTRL_COUNTFLAG_COUNTED_TO_0        (1U << 16)
 #define STK_CTRL_CLKSOURCE_AHB_DIV8            (0U << 2)
@@ -73,7 +73,7 @@ typedef struct
   uint32_t NVIC_STIR;
 } NVIC_TypeDef;
 
-__root __no_init volatile NVIC_TypeDef NVIC @ (0xE000E100U);
+
 // Define IRQn_Type
 typedef enum
 {

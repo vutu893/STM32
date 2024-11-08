@@ -13,5 +13,12 @@ __root __no_init volatile GPIO_TypeDef GPIOC @ (0x40011000U);
 #include <myRCC.h>
 __root __no_init volatile RCC_TypeDef RCC @ (0x40021000U);
 
+/* EXTI */
+#include <exti.h>
+__root __no_init volatile EXTI_TypeDef EXTI @ (0x40010400U);
 
+/*CORTEX_M3 */
+#include <cortex_m3.h>
+__root __no_init volatile SYSTICK_TypeDef SYSTICK @ (0xE000E010U);
+__root __no_init volatile NVIC_TypeDef NVIC @ (0xE000E100U);
 #endif
