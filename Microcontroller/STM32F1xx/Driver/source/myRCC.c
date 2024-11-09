@@ -26,4 +26,5 @@ void RCC_Init(volatile RCC_TypeDef *RCC)
   // Enable peripheral clocks as needed
   RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; // Enable GPIOC clock
   RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN; // Enable GPIOA clock
+  RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;
 }

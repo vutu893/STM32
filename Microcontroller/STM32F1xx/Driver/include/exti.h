@@ -24,7 +24,7 @@ typedef enum
   EXTI_RISING_EDGE,
   EXTI_FALLING_EDGE,
   EXTI_BOTH_EDGE        
-}EXIT_EdgeType;
+}EXTI_EdgeType;
 
 
 

@@ -44,33 +44,33 @@ void SysTick_Handler(void);
 /*-------------------------------------------- Define register of SCB system control block ---------------------------------------------------- */
 typedef struct
 {
-  uint32_t SCB_ACTLR;
-  uint32-t SCB_CPUID;
-  uint32_t SCB_ICSR;
-  uint32_t SCB_VTOR;
-  uint32_t SCB_AIRCR;
-  uint32_t SCB_SCR;
-  uint32_t SCB_CCR;
-  uint32_t SCB_SHPR1;
-  uint32_t SCB_SHPR2;
-  uint32_t SCB_SHPR3;
-  uint32_t SCB_SHCRS;
-  uint32_t SCB_CFSR;
-  uint32_t SCB_HFSR;
-  uint32_t SCB_MMAR;
-  uint32_t SCB_BFAR;
+  volatile uint32_t SCB_ACTLR;
+  volatile uint32_t SCB_CPUID;
+  volatile uint32_t SCB_ICSR;
+  volatile uint32_t SCB_VTOR;
+  volatile uint32_t SCB_AIRCR;
+  volatile uint32_t SCB_SCR;
+  volatile uint32_t SCB_CCR;
+  volatile uint32_t SCB_SHPR1;
+  volatile uint32_t SCB_SHPR2;
+  volatile uint32_t SCB_SHPR3;
+  volatile uint32_t SCB_SHCRS;
+  volatile uint32_t SCB_CFSR;
+  volatile uint32_t SCB_HFSR;
+  volatile uint32_t SCB_MMAR;
+  volatile uint32_t SCB_BFAR;
 } SCB_TypeDef;
 
 /*--------------------------------------------- Define register of NVIC(Nest vector interrupt control)-----------------------------------------*/
 typedef struct
 {
-  uint32_t NVIC_ISER[3]; // Enable interrupts
-  uint32_t NVIC_ICER[3]; // Disable interrupts
-  uint32_t NVIC_ISPR[3]; // Sets the pending status of interrupts
-  uint32_t NVIC_ICPR[3]; // Clears the pending status of interrupts
-  uint32_t NVIC_IABR[3]; // Shows if an interrupt is currently active
-  uint32_t NVIC_IPR[21];   // Sets the priority level for each interrupt 
-  uint32_t NVIC_STIR;
+  volatile uint32_t NVIC_ISER[3]; // Enable interrupts
+  volatile uint32_t NVIC_ICER[3]; // Disable interrupts
+  volatile uint32_t NVIC_ISPR[3]; // Sets the pending status of interrupts
+  volatile uint32_t NVIC_ICPR[3]; // Clears the pending status of interrupts
+  volatile uint32_t NVIC_IABR[3]; // Shows if an interrupt is currently active
+  volatile uint32_t NVIC_IPR[21];   // Sets the priority level for each interrupt 
+  volatile uint32_t NVIC_STIR;
 } NVIC_TypeDef;
 
 
@@ -93,6 +93,7 @@ typedef enum
   PVD_IRQn              = 1,
   TAMPER_IRQn           = 2,
   // add if necessary
+  TIM6_IRQn             = 61
 }IRQn_Type;
 //define mask for register of NVIC
 #define NVIC_PRIORITY_BITS  (4)
@@ -102,6 +103,6 @@ void NVIC_DisableIRQ(IRQn_Type IRQn);
 void NVIC_SetPendingIRQ(IRQn_Type IRQn);
 void NVIC_ClearPendingIRQ(IRQn_Type IRQn);
 //uint32_t NVIC_GetActive(IRQn_Type IRQn);
-void NVIC_SetPriority((IRQn_Type IRQn, uint32_t priority);
+void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority);
 //uint32_t NVIC_GetPriority(IRQn_Type IRQn);
 #endif
