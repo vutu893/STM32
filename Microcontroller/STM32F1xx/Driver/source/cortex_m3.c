@@ -83,7 +83,7 @@ void NVIC_EnableIRQ(IRQn_Type IRQn)
 {
   if (IRQn >= 0)
   {
-    NVIC.NVIC_ISER[IRQn >> 5] = (1 << (IRQn & 0x1F)); //Set bit to enable IRQ
+    NVIC.NVIC_ISER[IRQn >> 5] = (1 << (((uint32_t)IRQn) & 0x1F)); //Set bit to enable IRQ
   }
 }
 

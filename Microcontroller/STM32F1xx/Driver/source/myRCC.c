@@ -12,7 +12,7 @@ void RCC_Init(volatile RCC_TypeDef *RCC)
   
   // configure the prescalers for AHB, APB1, and APB2 buses
   RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
-  RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
+  RCC->CFGR |= RCC_CFGR_PPRE1_DIV8;
   RCC->CFGR |= RCC_CFGR_PPRE2_DIV1;
   
   //enbale PLL and wait until it's ready

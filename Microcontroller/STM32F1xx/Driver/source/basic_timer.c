@@ -24,7 +24,7 @@ void BasicTimer_Enable(BASICTIMER_TypeDef volatile *TIM)
 //Disable the basic timer
 void BasicTimer_Disable(BASICTIMER_TypeDef volatile *TIM)
 {
-  TIM->CR1 &= ~(0x01);
+  TIM->CR1 &= ~(1U << 0);
 }
 void BasicTimer_EnableInterrupt(BASICTIMER_TypeDef volatile *TIM)
 {
@@ -32,10 +32,10 @@ void BasicTimer_EnableInterrupt(BASICTIMER_TypeDef volatile *TIM)
 }
 // Disable update interrupt for the Basic Timer
 void BasicTimer_DisableInterrupt(BASICTIMER_TypeDef volatile *TIMx) {
-    TIMx->DIER &= ~0x01; // Clear UIE bit in DIER register to disable interrupt
+    TIMx->DIER &= ~(1U << 0); // Clear UIE bit in DIER register to disable interrupt
 }
 
 // Clear the update interrupt flag
 void BasicTimer_ClearUpdateFlag(BASICTIMER_TypeDef volatile *TIMx) {
-    TIMx->SR &= ~0x01; // Clear UIF bit in SR register
+    TIMx->SR &= ~(1U << 0); // Clear UIF bit in SR register
 }

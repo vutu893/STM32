@@ -93,7 +93,7 @@ typedef enum
   PVD_IRQn              = 1,
   TAMPER_IRQn           = 2,
   // add if necessary
-  TIM6_IRQn             = 61
+  TIM6_DAC_IRQn             = 54
 }IRQn_Type;
 //define mask for register of NVIC
 #define NVIC_PRIORITY_BITS  (4)
